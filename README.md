@@ -61,3 +61,5 @@ To change the password, update the `playbook.yml` file with the new password, an
 
 
 ---
+
+##ansible-playbook -i hosts playbook.yml
