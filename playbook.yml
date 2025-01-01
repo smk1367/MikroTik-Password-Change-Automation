@@ -1,0 +1,17 @@
+- name: Change password for user 'admin' on MikroTik RouterOS
+  hosts: mikrotik_op
+  gather_facts: no
+  tasks:
+    - name: Change password of user 'admin'
+      raw: "/user set admin password=PASS"
+      register: command_result
+      args:
+        timeout: 5
+
+    - name: Show stdout
+      debug:
+        var: command_result.stdout
+
+    - name: Show stderr
+      debug:
+        var: command_result.stderr
